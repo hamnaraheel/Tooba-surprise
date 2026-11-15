@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Birthday Surprise for Bc</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&family=Dancing+Script:wght@500;600&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg"></div>
+<canvas id="petals"></canvas>
+<canvas id="fw"></canvas>
+
+<div class="lock" id="lock" role="dialog" aria-label="Enter the code">
+  <p class="kicker">A little something for Bc</p>
+  <h1>Enter the code</h1>
+  <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
+  <div class="msg" id="msg" aria-live="polite">Numbers and a heart</div>
+  <div class="keys" id="keys"></div>
+</div>
+
+<div class="app">
+  <div class="top">
+    <nav class="stepper" id="stepper" aria-label="Steps"></nav>
+    <button class="music off" id="music" aria-label="Toggle music">♪</button>
+  </div>
+  <div class="stage" id="stage">
+
+    <section class="step" data-i="0">
+      <div class="avatar"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="56" r="30" fill="#fff" stroke="#8c1230" stroke-width="2.5"/><path d="M34 34 50 14l16 20z" fill="#f7d96a" stroke="#8c1230" stroke-width="2.5" stroke-linejoin="round"/><circle cx="40" cy="55" r="3" fill="#8c1230"/><circle cx="60" cy="55" r="3" fill="#8c1230"/><ellipse cx="33" cy="63" rx="6" ry="4" fill="#f7a3b6"/><ellipse cx="67" cy="63" rx="6" ry="4" fill="#f7a3b6"/><path d="M45 64q5 5 10 0" fill="none" stroke="#8c1230" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <p class="kicker">A little something for <span class="name">Bc</span></p>
+      <h1>It's Your Special Day ❤️</h1>
+      <p class="sub">Today isn't just another day… It's a day worth celebrating because you exist.</p>
+      <button class="btn" data-next>Begin →</button>
+    </section>
+
+    <section class="step" data-i="1">
+      <div class="bear"><svg viewBox="0 0 100 100" width="62" height="62" aria-hidden="true"><circle cx="24" cy="26" r="12" fill="#222"/><circle cx="76" cy="26" r="12" fill="#222"/><circle cx="50" cy="54" r="34" fill="#fff" stroke="#222" stroke-width="3"/><ellipse cx="36" cy="52" rx="8" ry="10" fill="#222" transform="rotate(-15 36 52)"/><ellipse cx="64" cy="52" rx="8" ry="10" fill="#222" transform="rotate(15 64 52)"/><circle cx="37" cy="50" r="2.6" fill="#fff"/><circle cx="63" cy="50" r="2.6" fill="#fff"/><ellipse cx="50" cy="64" rx="5" ry="3.5" fill="#222"/></svg></div>
+      <h2>Mark It Forever</h2>
+      <div class="cal"><h3>NOVEMBER 2013</h3><div class="grid" id="cal"></div></div>
+      <div class="bigdate">16 · 11 · 2013</div>
+      <p class="sub">Save this date forever.</p>
+      <button class="btn" data-next>Next →</button>
+    </section>
+
+    <section class="step" data-i="2">
+      <div class="bear"><svg viewBox="0 0 100 100" width="62" height="62" aria-hidden="true"><circle cx="22" cy="28" r="12" fill="#c98a5a"/><circle cx="78" cy="28" r="12" fill="#c98a5a"/><circle cx="50" cy="54" r="34" fill="#dca06b"/><circle cx="38" cy="50" r="3.5" fill="#3b1c10"/><circle cx="62" cy="50" r="3.5" fill="#3b1c10"/><ellipse cx="50" cy="62" rx="12" ry="9" fill="#f3d3ae"/><ellipse cx="50" cy="58" rx="4" ry="3" fill="#3b1c10"/><ellipse cx="30" cy="62" rx="6" ry="4" fill="#f7a3b6"/><ellipse cx="70" cy="62" rx="6" ry="4" fill="#f7a3b6"/></svg></div>
+      <h2>Wishes For You ❤️</h2>
+      <p class="sub">Because you deserve more than just one wish…</p>
+      <div class="wishes">
+        <div class="wish">May your smile always stay this beautiful.</div>
+        <div class="wish">May happiness find you wherever you go.</div>
+        <div class="wish">May every dream in your heart come true.</div>
+        <div class="wish">May your life always be filled with love and peace.</div>
+      </div>
+      <button class="btn" data-next>Open Your Letter ✉</button>
+    </section>
+
+    <section class="step" data-i="3">
+      <div class="letter" id="letter" aria-live="polite"></div>
+      <button class="btn after" id="letterNext" data-next>Continue →</button>
+    </section>
+
+    <section class="step" data-i="4">
+      <h2>Six Little Wishes 🎈</h2>
+      <p class="sub">Pop each shining balloon to reveal a wish.</p>
+      <div class="balloons" id="balloons"></div>
+      <div class="after" id="afterB">
+        <h2 style="font-size:24px">6 Wishes… Just For You ❤️</h2>
+        <p class="sub">Ready for one more surprise?</p>
+        <button class="btn" data-next>Continue →</button>
+      </div>
+    </section>
+
+
+    <section class="step" data-i="5">
+      <h2>Constellation</h2>
+      <p class="sub">Touch or drag to move your heart constellation ✨</p>
+      <canvas id="heart"></canvas>
+      <button class="btn" data-next>Continue →</button>
+    </section>
+
+    <section class="step final" data-i="6">
+      <div class="avatar"><svg viewBox="0 0 100 100" width="92" height="92" aria-hidden="true"><circle cx="22" cy="26" r="11" fill="#fff"/><circle cx="78" cy="26" r="11" fill="#fff"/><circle cx="50" cy="56" r="32" fill="#fff"/><circle cx="38" cy="54" r="3" fill="#5a0a1e"/><circle cx="62" cy="54" r="3" fill="#5a0a1e"/><ellipse cx="31" cy="63" rx="6" ry="4" fill="#f7a3b6"/><ellipse cx="69" cy="63" rx="6" ry="4" fill="#f7a3b6"/><path d="M44 63q6 5 12 0" fill="none" stroke="#5a0a1e" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <h1>Happy Birthday, Bc ❤️</h1>
+      <p class="script">May your life always be as beautiful as your heart.</p>
+      <p class="script" style="color:#ff9fb4">Made with love, just for you. ❤️</p>
+      <button class="btn ghost" id="replay">Replay The Surprise ↻</button>
+    </section>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
